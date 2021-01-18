@@ -15,6 +15,7 @@
   - Trailing Zeroes
   - Coin Piles
   - Palindrome Reorder
+  - Gray Code
   - Creating Strings I
   - Apple Division
   - Chessboard and Queens

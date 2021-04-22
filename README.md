@@ -32,6 +32,7 @@
   - [Sum of Two Values](sorting%20and%20searching/sumOf2.cpp)
   - [Maximum Subarray Sum](sorting%20and%20searching/maxSumSubArr.cpp)
   - [Stick Lengths](sorting%20and%20searching/stickLen.cpp)
+  - [Sum of Three Values](sorting%20and%20searching/sumOf3Vals.cpp)
   - [Sum of Four Values](sorting%20and%20searching/sumOfFour.cpp)
   
 ### Dynamic Programming

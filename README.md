@@ -27,6 +27,7 @@
   - [Distinct Numbers](sorting%20and%20searching/distinctNos.cpp)
   - [Apartments](sorting%20and%20searching/apartments.cpp)
   - [Ferris Wheel](sorting%20and%20searching/ferrisWheel.cpp)
+  - [Concert Tickets](sorting%20and%20searching/concertTickets.cpp)
   - [Sum of Two Values](sorting%20and%20searching/sumOf2.cpp)
   - [Maximum Subarray Sum](sorting%20and%20searching/maxSumSubArr.cpp)
   - [Stick Lengths](sorting%20and%20searching/stickLen.cpp)

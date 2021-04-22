@@ -16,6 +16,7 @@
   - Coin Piles
   - Palindrome Reorder
   - Gray Code
+  - Tower of Hanoi
   - Creating Strings I
   - Apple Division
   - Chessboard and Queens

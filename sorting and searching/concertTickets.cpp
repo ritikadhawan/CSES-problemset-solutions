@@ -1,41 +1,26 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-long long findPrice(vector<long long>&h, long long maxPrice, vector<bool>&visited) {
-    auto lb = lower_bound(h.begin(), h.end(), maxPrice, greater<long long>());
-    int lbI = lb - h.begin();
+#define ll long long
 
-    auto ub = upper_bound(h.begin(), h.end(), *lb, greater<long long>());
-    int ubI = ub - h.begin();
-    if(lb == h.end()) {
-        return -1;
-    }
-
-    if(visited[lbI] && visited[ubI-1]) {
-        return findPrice(h, *lb-1, visited);
-    } else {
-        //binary search
-        if(!visited[lbI]) {
-            visited[lbI] = true;
-
-            
-            return h[lbI];
+void printMaxPrice(map<ll, ll>&ticketPrice, vector<ll>&customerPrice, int m) {
+    for(int i = 0; i < m; i++) {
+        //find ticketPrice equal to or just less than our customerPrice
+        map<ll, ll>::iterator it = ticketPrice.lower_bound( customerPrice[i]);
+        if(ticketPrice.size() == 0 || (it != ticketPrice.end() && it->first > customerPrice[i] && it == ticketPrice.begin())) {
+            cout<<-1<<endl;
+            continue;
+        } else if(it == ticketPrice.end() || it->first > customerPrice[i]) {
+            it--;
         }
-        int i=lbI, j=ubI-1;
-        while(i <= j) {
-            int mid = (i+j)/2;
-            if(!visited[mid] && !visited[mid-1]) {
-                //move towards left
-                j = mid-1;
-            } else if(visited[mid]) {
-                i = mid+1;
-            } else {
-                visited[mid] = true;
-                return h[mid];
-            }
+
+        cout<<it->first<<endl;
+        it->second--;
+        if(it->second == 0) {
+            ticketPrice.erase(it);
         }
+
     }
-    return -1;
 }
 
 int main() {
@@ -43,30 +28,18 @@ int main() {
     cin.tie(NULL);
     int n, m;
     cin>>n>>m;
-    vector<long long> h(n);
-    vector<long long> t(m);
+    map<ll, ll> ticketPrice;
+    vector<ll> customerPrice(m);
 
     for(int i=0; i<n; i++) {
-        cin>>h[i];
+        int price;
+        cin>>price;
+        ticketPrice[price]++;
     }
 
     for(int i=0; i<m; i++) {
-        cin>>t[i];
+        cin>>customerPrice[i];
     }
-
-    sort(h.begin(), h.end(), greater<long long>());
-    vector<bool> visited(n, false);
-    for(int i=0; i<m; i++) {
-        // auto lb = lower_bound(h.begin(), h.end(), t[i], greater<long long>());
-        // if(lb == h.end()) {
-        //     cout<<-1<<endl;
-        // } else {
-        //     cout<<*lb<<endl;
-        //     h.erase(lb);
-        // }
-        
-        cout<<findPrice(h, t[i], visited)<<endl;
-        // break;
-    }
+    printMaxPrice(ticketPrice, customerPrice, m);
     return 0;
 }

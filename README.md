@@ -28,6 +28,7 @@
   - [Apartments](sorting%20and%20searching/apartments.cpp)
   - [Ferris Wheel](sorting%20and%20searching/ferrisWheel.cpp)
   - [Concert Tickets](sorting%20and%20searching/concertTickets.cpp)
+  - [Movie Festival](sorting%20and%20searching/movieFestival.cpp)
   - [Sum of Two Values](sorting%20and%20searching/sumOf2.cpp)
   - [Maximum Subarray Sum](sorting%20and%20searching/maxSumSubArr.cpp)
   - [Stick Lengths](sorting%20and%20searching/stickLen.cpp)

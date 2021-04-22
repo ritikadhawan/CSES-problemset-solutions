@@ -20,6 +20,7 @@
   - Creating Strings I
   - Apple Division
   - Chessboard and Queens
+  - Grid Paths
   
 ### Sorting and Searching 
   - Distinct Numbers
